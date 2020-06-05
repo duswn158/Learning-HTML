@@ -1,0 +1,310 @@
+@charset 'utf-8';
+/* ------set------------*/
+*{
+    margin: 0px;
+    padding: 0px;
+    -webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+ol,ul,li{list-style: none;}
+img{border: 0px;}
+a{text-decoration : none;}
+
+body{
+    font-family: -apple-system,BlinkMacSystemFont,'Malgun Gothic','맑은 고딕',helvetica,'Apple SD Gothic Neo',sans-serif;
+    font-size: 12px;
+    line-height: 16px;
+    color: #202020;
+}
+
+/*----wrap------*/
+
+.wrap {
+    margin: auto;
+    width: 1130px;
+}
+
+.wrap .section .left{
+    width: 750px;
+}
+
+.wrap .section .right{
+    width: 350px;
+}
+
+/*---------header--------------*/
+.header {
+    
+}
+
+.header .nav01{
+    height: 18px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.header .nav01 li{
+    float: right;
+    cursor: pointer;
+}
+
+.header .nav01 li:first-child{
+    width: 60px;
+    height: 10px;
+}
+.header .nav01 li:nth-child(2){
+    
+}
+.header .nav01 li:last-child{
+    
+}
+.header .nav01 li img{
+    height: 16px;
+}
+
+.header .logobox{
+    display: inline-block;
+}
+
+.header .logo{
+    width: 222px;
+    height: 53px;
+}
+.header .serchbox{
+    width: 582px;
+    height: 52px;
+    border: 1px dotted red;
+    position: relative;
+    float: right;
+    left: -27%;
+}
+.serchbox .search{
+    width: 444px;
+    height: 24px;
+    display: inline-block;
+    padding: 13px;
+    position: absolute;
+    top: 10px;
+    left: 15px;    
+}
+
+.serchbox .search_img{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    height: 100%;
+}
+
+.serchbox .search_img:hover{
+    cursor: pointer;
+}
+
+.header .top_menu{
+    
+}
+
+/*-------------section----------*/
+
+
+
+
+/*-------------footer-----------*/
+
+body .footer{
+    border-top: 1px solid #e4e8eb;   
+    background-color: #fafbfc;
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+.footer .wrap{
+    
+}
+
+.footer .footerbox{
+    /*border: 1px solid red;*/
+}
+.footer #footer01 {
+    width: 100%;
+}
+
+.footer #footer01 li{
+    float: left;
+    width : 33%;
+/*    border: 1px dotted blue;*/
+    text-align: left;
+    padding: 24px 0px 24px 20px;
+}
+
+.footer #footer01 li p {
+    float: right;
+    margin-right: 10%;
+}
+
+.footer #footer01 li p .first{
+    font-weight: 700;
+    letter-spacing: -0.25px;
+    color: #58c464;
+    font-size: 12px;
+    line-height: 1.25;
+}
+.footer #footer01 li p .second{
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: -0.26px;
+    color: #242424;
+}
+.footer #footer01 li p .second:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+.footer #footer01 li p .last{
+    line-height: 18px;
+    letter-spacing: -0.25px;
+    color: #424242;
+    font-size: 12px;
+}
+.footer #footer01 li img {
+    width: 160px;
+    height: 80px;
+    margin-top: 5px;
+}
+
+.footer #footer02{
+    clear: both;
+    border-top: 1px solid #e4e8eb;
+    padding-top: 10px;
+    padding-bottom: 14px;
+}
+
+.footer #footer02 li:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.footer #footer02 li:first-child {
+    float: left;
+    width: 200px;
+    padding-left: 5px;
+}
+
+.footer #footer02 li:last-child{
+    float: right;
+    width: 200px;
+    text-align: right;
+    padding-right: 10px;
+}
+
+.footer #footer03 {
+    clear : both;
+    border-top: 1px solid #e4e8eb;
+    padding-top: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.footer #footer03:after {
+    content: '';
+    display: block;
+    clear: both 
+}
+
+#footer03 .footer_ul01 {
+    float: left;
+     padding: 5px;
+}
+
+#footer03 .footer_ul01 li{   
+    height: 20px;
+}
+#footer03 .footer_ul01 li span:hover{
+    cursor: pointer;
+}
+
+#footer03 .footer_ul01 li span:first-child{
+    margin-right: 10px;
+    font-weight: 600;
+    
+}
+
+#footer03 .footer_ul01 .need_color{
+    font-family: -apple-system, BlinkMacSystemFont, "Malgun Gothic", "맑은 고딕", helvetica, "Apple SD Gothic Neo", sans-serif;
+    font-size: 12px;
+    line-height: 16px;
+    color: #777;
+}
+
+#footer03 .footer_ul02 {
+    float: right;
+    margin-bottom: 10px;
+}
+
+#footer03 .footer_ul02 li{
+    float: left;
+    width : 200px;
+/*    border: 1px solid red;*/
+    padding: 10px 10px 10px 10px;
+    text-align: justify;
+    position: relative;
+    margin-top: 5px;
+}
+
+
+.footer .footerbox .footer_ul02 img{
+    width: 48px;
+    height: 48px;
+    display: block;
+    float: right;
+    position: absolute;
+    top: 10%;
+    right: 5%;
+}
+
+#footer03 .footer_ul02 li span{
+    font-family: -apple-system, BlinkMacSystemFont, "Malgun Gothic", "맑은 고딕", helvetica, "Apple SD Gothic Neo", sans-serif;
+    font-size: 12px;
+    line-height: 16px;
+}
+#footer03 .footer_ul02 li span:nth-child(3):hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#footer03 .footer_ul02 li span:nth-child(3){
+    color : gray;
+}
+
+#footer04{
+    clear: both;
+    border-top: 1px solid #e4e8eb;
+    padding: 15px;
+}
+
+#footer04:after {
+    content: '';
+    display: block;
+    clear: both 
+}
+
+#footer04 li {
+    float: left;
+    width: 100px;
+    border-right: 1px solid gray;
+    text-align: center;
+    color: #777;
+    font-family: -apple-system, BlinkMacSystemFont, "Malgun Gothic", "맑은 고딕", helvetica, "Apple SD Gothic Neo", sans-serif;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+#footer04 li:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#footer04 li:nth-child(5),
+#footer04 li:nth-child(6),
+#footer04 li:nth-child(9){
+    width: 140px;
+}
