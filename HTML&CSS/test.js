@@ -20,5 +20,36 @@ $ (document).ready(function(){
         // src를 위 변수로 대체
         $(".left .l_top li:nth-child(4) .news_img img").attr("src",src_url);
         
+    })//click
+    
+    $(".footer #footer01 li p").mouseover(function(){
+        
+        $(this).siblings("img").css({
+            "transform":"scale(1.1, 1.1)"
+        });        
     })
+    
+    $(".footer #footer01 li p").mouseleave(function(){
+        
+        $(this).siblings("img").css({
+            "transform":"scale(1, 1)"
+        }); 
+        
+    })
+    
+    $(".top_menu").click(function(){
+        $("#search_box").css({
+            "display" : "block",
+            "cursor" : "pointer"
+        });
+    })
+    
+    $("#search_box").mouseleave(function(){
+        $("#search_box").css({
+            "display" : "none",
+            "cursor" : "default"
+        });
+    })
+    
+    
 })
