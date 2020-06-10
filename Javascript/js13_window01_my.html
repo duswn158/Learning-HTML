@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>윈도우 연습01</title>
+
+<style type="text/css">
+
+	/* 감춰진 팝업창1 */
+	#regist {
+		border: 1px solid black;
+		background: pink;
+		position: absolute;
+		top: 200px;
+		left: 500px;
+		display: none;
+	}
+</style>
+
+<!-- 
+	display : none;			//공간을 차지하지 않는다 (만들어지지 않은 상태)
+	visibility: hidden;		//공간을 차지하고, 보이지 않는다 (만들어져 있는 상태)
+ -->
+
+<script type="text/javascript">
+	function openWin() {
+		var url = "js13_window02.html";
+
+		// myframe으로 하면 test 팝업창이 뜨지 않고 아래있는 myframe이라는 이름을 가진
+		// iframe태그에 창 실행
+
+		//var title = "myframe";
+		var title = "test";
+		var prop = "top=200px,left=600px,width=500px,height=500px";
+
+		// 클릭시 window02로 넘어가서 test라는 이름의 프레임을 prop변수의 옵션대로 연다
+		window.open(url, title, prop);
+	}
+
+	function registForm() {
+		// 클릭시 감춰진 팝업창1 block시켜서 보여주고
+		// 바디 배경화면 회색.
+		document.getElementById("regist").style.display = "block";
+		document.body.style.background = "gray";
+
+		
+		// disabled : 모든 비활성 요소를 나타냅니다. 비활성 요소란 활성(선택, 클릭, 입력 등등)하거나
+		// 포커스를 받을 수 없는 요소를 말합니다. 반대 상태인 활성 요소도 존재합니다.
+		// CSS : enabled 클래스는 모든 활성 요소를 나타냅니다. 활성 요소란 활성(선택, 클릭, 입력 등등)하거나
+		// 포커스를 받을 수 있는 요소를 말합니다. 반대 상태인 비활성 요소도 존재합니다.
+		
+		// 이름btn 가진 태그 즉 버튼태그 NodeList로 가져와서
+		// for문으로 버튼들 전부 disabled
+		var btns = document.getElementsByName("btn");
+		for ( var i in btns) { //for in 문 (향상된 for문)
+		//	for(var i=0;i<btns.length;i++){
+			btns[i].disabled = "disabled";
+		}
+	}
+
+	// 회원가입 팝업 창에서 확인버튼을 누르면 함수실행
+	function closeWin() {
+		//regist 즉 팝업창 다시 displat : none;
+		document.getElementById("regist").style.display = "none";
+		// body 색 다시 흰색으로.
+		document.body.style.background = "white";
+
+		// 버튼들 다시 활성화.
+		var btns = document.getElementsByName("btn");
+		for ( var i in btns) {
+			btns[i].disabled = "";
+		}
+	}
+
+	// 아이디 적어넣는 text 박스 클릭시 alert 경고창
+	function idchk() {
+		alert("중복체크를 확인하세요");
+	}
+
+	// 중복확인 창에서 중복확인 버튼 클릭시 window03 팝업창 속성대로 열어줌
+	function idCheck() {
+		open("js13_window03_my.html", "", "width=300px,height=300px");
+	}
+</script>
+
+</head>
+<body>
+
+	<h1>window객체</h1>
+	
+	<pre>
+	프로퍼티
+	 -document
+	 -history
+	 -location
+	 -navigator
+	 -screen
+	 -frames
+	 -parent
+	 -top
+	 -self
+	메서드
+	 -alert()
+	 -confirm()
+	 -prompt()
+	 -back()
+	 -forward()
+	 -setInterval()
+	 -clearInterval()
+	 -setTimeout()
+	 -open()
+	 -close()
+	 -scroll(),scrollBy(), scrollTo() 
+	</pre>
+
+	<div id="f1">
+		<h1>팝업창 만들기</h1>
+		<button onclick="openWin()" name="btn">창열기</button>
+		<hr>
+		<h1>회원가입하기(div팝업창)</h1>
+		<button onclick="registForm()" name="btn">회원가입</button>
+	</div>
+
+	<div id="regist">
+		<form>
+			<table>
+				<caption>회원가입</caption>
+				<tr>
+					<td>아이디</td>
+					<!-- 중복체크 하지않으면 쓰지 못하도록 readonly속성줌 -->
+					<td><input type="text" name="id" onclick="idchk()" readonly="readonly" /> 
+					<input type="button" value="중복체크" onclick="idCheck()" /></td>
+				</tr>
+				<tr>
+					<td>패스워드</td>
+					<!-- alt,checked는 있으면 안되는 속성 즉 함정임 -->
+					<td><input type="password" name="pwd" alt="" style="color: red;" checked="checked" /></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="button" value="확인" onclick="closeWin()" /></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+
+	<br/><br/><br/>
+	<iframe name="myframe"></iframe>
+
+</body>
+</html>

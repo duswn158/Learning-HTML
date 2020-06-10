@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>팝업창</title>
+
+<!-- 
+	현재 윈도우(window)를 오픈한 윈도우의 레퍼런스(reference)를 반환합니다.
+	윈도우A에서 window.open()을 통해 윈도우B을 열었다면, window.opener를 통해  윈도우B에서 윈도우 A를 제어할 수 있습니다.
+	부모창. 즉 open한 er -> 놈
+	opener.document = 부모창.문서
+ -->
+<script type="text/javascript">
+
+	// 팝업창에서 전달버튼 클릭시
+	// test이름 가진 input text 태그 value window01에 h1 태그로 innerHTML
+	function test(){
+		var val=document.getElementsByName("test")[0].value;
+		opener.document.getElementsByTagName("h1")[1].innerHTML=val;
+
+		// 전달후 창 닫음.
+		// self.close(); 가 생략된것. close앞에 생략 해두면 self로 봄.
+		// opener.close(); 하면 window01이 꺼짐 즉 부모창 닫음
+		close();
+	}
+</script>
+
+</head>
+<body>
+
+	<input type="text" name="test"/>
+	<input type="button" onclick="test()" value="전달"/>
+
+	<!-- 창닫기 버튼 클릭시 자기자신 닫음 -->
+	<input type="button" onclick="self.close()" value="창닫기">
+
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js</title>
+    <script>
+
+        function LiteralTest(am){
+            am("리터럴 함수 테스트");
+        }
+
+        function func01(){
+            
+            var pm = "sd";
+            // var am = "sd";
+
+            LiteralTest(function(pm){
+                alert(pm); // 출력값 -> "리터럴 함수 테스트"               
+                // alert(pm + am); // 출력값 -> "리터럴 함수 테스트sd"
+            });
+        }
+
+
+        function closureTest(val){
+            var nothing = "!@D@@";
+            function addValue(){
+                // 입력값이랑 nothing변수를 더해서 경고창 출력
+                alert(val + nothing);
+            }
+            //console.log(addValue);
+
+            // 경고창 출력하는 함수 리턴
+            return addValue;
+        }
+
+        var amEdu = closureTest("오전수업");
+
+        function pmEdu(val){
+            
+            // 아래 html에서 pm의 value를 파라미터 값으로 넣어줬고
+            // 위 리턴값 즉 경고창 출력 함수를 파라미터 넣어서 실행();
+            closureTest(val)();
+            
+            // 뒤에 ()가 붙지 않으면 리턴값만 주고 끝남
+            //console.log(closureTest(val));
+        }
+
+    </script>
+</head>
+<body>
+    <p onclick = "func01();">리터럴 함수</p>
+
+    <!-- 콘솔창 찍어보려고 이벤트줌 -->
+    <p onclick = "closureTest();">클로져 함수</p>
+
+    <label for = "am">오전강의</label>
+	<input type="text" id = "am">
+	<input type="button" value="클릭!" onclick="amEdu();">
+	
+	<label for="pm">오후 강의</label>
+    <input type="text" id="pm">
+    <!-- 위의 input태그의 아이디인 pm의 value 즉 입력값을 스크립트로 전달 -->
+	<input type="button" value="클릭!" onclick="pmEdu(pm.value);">
+</body>
+</html>
