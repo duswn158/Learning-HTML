@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>js20_dom04</title>
+
+<style type="text/css">
+	
+	img{
+		vertical-align : middle;
+		width : 300px;
+		height : 300px;
+	}
+	a{
+		font-size : 50pt;
+		text-decoration : none;
+	}
+
+</style>
+
+<script type="text/javascript">
+
+	onload = function(){
+		
+		var anchs = document.querySelectorAll("a");
+		var img = document.querySelector("img");
+		var count = 1;
+		
+		// 왼쪽 a 태그 클릭
+		anchs[0].onclick = function(){
+			var imgAlt = img.getAttribute("alt");
+			
+			// 이미지가 첫뻔째 이미지 일때 이전버튼 또누르면 마지막 이미지로
+			if (imgAlt == "img01"){
+				
+				// 카운트 마지막으로 돌려쥬고
+				count = 7;
+				
+				// img태그 src 마지막 사진으로 넘겨쥬공
+				img.setAttribute("alt","img07");
+				img.setAttribute("src", "resources/img/img07.jpg");
+				
+			} else { // 위가 아니면 count 하나씩 빼가며 이전 이미지로 넘겨쥼
+				img.setAttribute("alt","img0"+(--count));
+				img.setAttribute("src","resources/img/img0"+count+".jpg");
+			}
+		}
+		
+		// 오른쪽 클릭
+		anchs[1].onclick = function(){
+			var imgAlt = img.getAttribute("alt");
+			
+			if (imgAlt == "img07"){
+				
+				count = 1;
+				img.setAttribute("alt","img01");
+				img.setAttribute("src", "resources/img/img01.jpg");
+				
+			} else { // 위가 아니면 count 하나씩 빼가며 이전 이미지로 넘겨쥼
+				img.setAttribute("alt","img0"+(++count));
+				img.setAttribute("src","resources/img/img0"+count+".jpg");
+			}
+			
+		}
+		
+	}
+
+</script>
+
+</head>
+<body>
+
+	<div>
+		<a href="#" id = "lt">◀</a>
+		<img alt = "img01" src = "resources/img/img01.jpg">
+		<a href = "#" id = "rt">▶</a>
+	</div>
+
+</body>
+</html>

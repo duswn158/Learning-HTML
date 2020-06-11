@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>js21_dom05</title>
+
+<style type="text/css">
+
+	p {
+		border : 1px solid red;
+	}
+
+</style>
+
+<script type="text/javascript">
+	
+	function addAppend(){
+		var p = document.createElement("p");
+		
+		/*		
+		아래 p.textContent = "자식태그들 중 가장 마지막에 붙여넣는다."; 는 주석코드 부분과 동일함 한줄로 단축.
+		
+		var txt = document.createTextNod("자식 태그들 중 가장 마지막에 붙여넣는다.");
+		p.appendChild(txt);
+		*/
+		// .textContent로 바로 값을 가져오거나 넣어줄 수 있음
+		p.textContent = "자식태그들 중 가장 마지막에 붙여넣는다.";
+		
+		var fieldset = document.getElementById("addElem");
+		
+		// .appendChild는 아래 하나씩 추가로 붙여줌
+		// 가지고 있는 자식요소들 제일 아래에 붙임
+		fieldset.appendChild(p);
+	}
+	
+	var i = 1;
+	
+	function addBefore(){
+		
+		var p = document.createElement("p");
+		p.textContent = "엘리먼트의 앞에 붙여넣는다." + i++;
+		
+		var fieldset = document.getElementById("addElem");
+		var div = document.querySelector("fieldset > div");
+		
+		// fieldset을 기준으로 고 바로 앞에 붙여주는 애
+		// 변수 div 즉 fieldset태그 자식 div 바로 위에
+		// 변수 p 즉 p태그에 textContent 넣은 p태그 생성~
+		fieldset.insertBefore(p, div);
+		
+	}
+	
+	// 제일 위에있는거부터 다 엄마집 나오게하는 함수
+	function moveElement(){
+		
+		// .children ?
+		
+		// fieldset에 1번지 children 이면 새로생긴 p태그 잡음 children은 텍스트(공백)는 번지수로 잡지않음
+		var moveElem = document.querySelector("fieldset").children[1];
+		var addElem = document.body;
+		
+		// Dom에 없던애들 createElement로 만든애들은 Dom에 포함되지 않아서 추가되는거지만
+		// 이미 Dom 객체에 있는 애를 appendChild 하면 상위인 body의 자식으로 이동이 됨(제일 아래로 붙음)
+		// Dom구조(트리구조)가 아예 바뀐것.
+		addElem.appendChild(moveElem);
+		
+		/*
+				검사하지 않는 숙제스
+				childNodes와 children의 차이점스?
+				childNode : 자식들 전부(all) 비노드요소(text,공백)까지 모두 포함해서 배열로저장
+				children : 현재 요소의 자식 요소가 포함된 HTMLCollection을 반환합니다. 비 요소 노드는 모두 제외
+		*/
+		
+	}
+	
+	function test01(){
+		
+		var div = document.createElement("div");
+		div.textContent ="dom test";
+		
+		var roc = document.getElementById("test01");
+		
+		roc.appendChild(div);
+	}
+	
+	function test02(){
+		
+		// 아래 선언을 document.getElementById("test01")로 해도됨 같은말.
+		var moveElement = document.querySelector("#test01").children[0];
+		var addroc = document.querySelector("#test02");
+		
+		addroc.appendChild(moveElement);
+		
+	}
+
+</script>
+
+</head>
+<body>
+
+	<h1>태그 추가하기</h1>
+	
+	<button onclick="addAppend();">appendChild()</button>
+	<button onclick="addBefore();">insertBefore()</button>
+	<button onclick="moveElement();">엘리먼트 이동</button>
+	
+	<fieldset id = "addElem">
+		<legend>부모태그</legend>
+		<div>div 태그</div>
+	</fieldset>
+	
+	<!-- 문제 -->
+	
+	<h3>
+		문제 1: test01 태그에 "dom test"라는 내용을 가진 div 태그를 여러개 추가해보자.
+		<button onclick = "test01();">클릭</button> 
+	</h3>
+	
+	<h3>
+		문제 2: test01 태그에 추가된 태그들을 test02 태그로 이동시켜 보자.
+		<button onclick = "test02();">클릭</button> 
+	</h3>
+	
+	*test01
+	<div id = "test01"></div>
+	*test02
+	<div id = "test02"></div>
+	
+	<style type="text/css">
+		#test01, #test02{
+			width : 300px;
+			height : 300px;
+			border : 1px solid blue;			
+		}
+	
+	</style>
+
+</body>
+</html>

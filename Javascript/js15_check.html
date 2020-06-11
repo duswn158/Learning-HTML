@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>js15_check.html</title>
+
+<style type="text/css">
+
+	#colorbox{
+		width: 320px;
+		height : 320px;
+		position : relative;
+	}	
+	
+	#red, #green, #blue, #yellow{
+		width: 150px;
+		height: 150px;
+		border: 1px solid black;
+		position : absolute;
+	}
+	
+	#green{left : 160px;}
+	#blue{top : 160px;}
+	#yellow{left : 160px; top : 160px;}
+
+</style>
+
+<script type="text/javascript">
+	
+	// allsel(this.checked); 엘리먼트가 체크되면 아래 함수에 boolean값 넣어주며 실행
+	// for문으로 전체선택 태그에 true값이면 아래 체크박스들도 true로 전체선택.
+	function allsel(check){
+		var chks = document.getElementsByName("chk");
+		
+		for(var i = 0; i < chks.length; i++){
+            chks[i].checked = check;
+        }
+		
+	}
+	
+	onload = function(){
+		
+		var chkbutton = document.getElementsByName("chk");
+		
+		/*
+		chkbutton[0].onclick = disallsel;
+		chkbutton[1].onclick = disallsel;
+		chkbutton[2].onclick = disallsel;
+		chkbutton[3].onclick = disallsel;
+		*/	
+		
+		for(var i = 0; i < chkbutton.length; i++){			
+			chkbutton[i].onclick = disallsel;			
+		}
+		
+	}
+	
+	function disallsel(){
+		
+		var chks = document.getElementsByName("chk");
+		var all = document.getElementsByName("all");
+		
+		all[0].checked = false;
+	}
+	
+	function sel(){
+		var chks = document.getElementsByName("chk");
+		
+		for(var i = 0; i < chks.length; i++){
+			
+			// chks[i]번지 중에 체크 되어있는것만 아래의 명령 실행 하기 위함.
+			if(chks[i].checked){
+				// chks[i]번지의 value값과 동일한 ID를 가진 Node를 불러와서 백그라운드컬러를 chks[i]번지의 value값으로 변경
+				// value값을 색으로 통일해두지 않으면 박스마다 색을 다르게 줄때 하나하나 지정해주어야 하기때문에 chk의 "value"와 dic의 "id"값을 색 이름으로 통일시킨듯
+				// chks[i].value 자동으로 문자열로 리턴
+				document.getElementById(chks[i].value).style.backgroundColor=chks[i].value;
+			} else{
+				// check된거 아니면 다시 흰색으로 돌림
+				document.getElementById(chks[i].value).style.backgroundColor="";
+			}
+		}
+		
+	}
+	
+	function clearDiv(){
+		
+		// 아이디 colorbox 자식 div태그 전부 선택해서 NodeList로 가져오고
+		// for문으로 배경색 초기화. ""대신 white 혹은 #ffffff도 가능
+		// 위에 allsel 함수가 이미 있으니 거기에 false값 집어넣어서 전체 체크박스 체크해제, all 체크박스도 가져와서 false로 체크해제
+		var colorbox = document.querySelectorAll("#colorbox > div");
+				
+		for(var i = 0; i < colorbox.length; i++){			
+			colorbox[i].style.backgroundColor = "";			
+		}
+		
+		document.getElementsByName("all")[0].checked=false;
+		allsel(false);
+		
+	}
+
+</script>
+
+</head>
+<body>
+
+	<div id="colorbox">
+		<div id = "red">red</div>
+		<div id = "green">green</div>
+		<div id = "blue">blue</div>
+		<div id = "yellow">yellow</div>		
+	</div>
+	
+	<div id = "base">
+		<form>
+			<input type="checkbox" name="all" onclick="allsel(this.checked);">전체선택<br>
+			
+			<input type="checkbox" name="chk" value="red">빨강<br>
+			<input type="checkbox" name="chk" value="green">초록<br>
+			<input type="checkbox" name="chk" value="blue">파랑<br>
+			<input type="checkbox" name="chk" value="yellow">노랑<br>
+			
+			<input type="button" value="선택" onclick="sel();">
+			<input type="button" value="초기화" onclick="clearDiv();">
+		</form>
+	
+	</div>
+	
+</body>
+</html>

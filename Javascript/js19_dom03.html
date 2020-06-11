@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>js19_dom03</title>
+
+<style type="text/css">
+
+	img, #imgView{
+		width : 300px;
+		height : 300px;
+	}
+
+</style>
+
+<script type="text/javascript">
+/*
+엘리먼트 객체 생성하기 : createElement("태그이름");
+text 객체 생성하기 : createTextNode("Text");
+객체 속성 생성하기 : createAttribute("AttributeName");
+속성 추가  : setAttributeNode(Attribute);
+		  setAttribute("AttributeName", "value"); 
+		  
+
+		  1. name이 rdoBtn인 요소들을 가져온다.
+		  2. 가져온 요소들의 length만큼 for문을 돌면서,
+		  	라디오 버튼이 체크되었다면 자신의 value값을 참조하여
+		  	resources/img/.. 을 가지고 와서
+		  3. img 태그를 생성하고, src 속성을 생성해서
+		  	 2번에서 만든 경로를 주입해
+		  4. 화면에 출력되도록 하자
+*/
+
+		function creatImg(){
+			
+			// 3.
+			var img = document.createElement("img");
+			
+			// 1.
+			var element = document.getElementsByName("rdoBtn");			
+			
+			//alert(element);
+			
+			//2.
+			/*
+			for (var i = 0; i < element.length; i++){				
+				if (element[i].checked){
+					// 2,3
+					img.setAttribute("src","resources/img/"+element[i].value);				
+					
+				} else{
+					
+				}
+			}
+			*/
+			
+			var src = ""; // 이거없어도 변수의 hoisting 때문에 결과는 나옴
+			
+			for (var i = 0; i < element.length; i++){
+				if (element[i].checked){
+					
+					src = "resources/img/"+element[i].value;				
+					
+				} 
+			}
+			
+			// 3(2).
+			img.setAttribute("src",src);
+			
+			// 4.
+			var div = document.getElementById("imgView");
+			var chd = document.querySelector("#imgView > img");
+			
+			// div 자식 img를 chd로 바꿔치기
+			div.replaceChild(img, chd);
+			
+		}
+		
+		  
+		function deleteImg(){
+			
+			document.getElementById("imgView").innerHTML = "<img src = ''>";
+			/*
+			var img = document.getElementsByTagName("img")[0];			
+			img.src = "";
+			*/
+		}
+
+
+</script>
+
+</head>
+<body>
+
+	<input type = "radio" name = "rdoBtn" value = "img01.jpg"> 그림1 <br>
+	<input type = "radio" name = "rdoBtn" value = "img02.jpg"> 그림2 <br>
+	<input type = "radio" name = "rdoBtn" value = "img03.jpg"> 그림3 <br>
+	
+	<button onclick ="creatImg();">이미지 생성하기</button>
+	<button onclick ="deleteImg();">이미지 삭제하기</button>
+	
+	<div id = "imgView"><img src=""></div>
+	
+</body>
+</html>
