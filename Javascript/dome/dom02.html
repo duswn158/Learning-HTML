@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom2</title>
+
+    <script type="text/javascript">
+        function eleCreate(){
+
+            var div = document.createElement("div");
+            var text = document.createTextNode("얖태그");
+
+            div.setAttribute("style","border : 1px solid red");
+
+            div.append(text);
+
+            document.body.appendChild(div);
+
+        }
+    </script>
+</head>
+<body>
+    
+    <!-- 중요중요중요 -->
+
+	<button onclick="eleCreate();">엘리먼트 생성하기</button>
+
+</body>
+</html>
