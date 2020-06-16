@@ -25,16 +25,31 @@
 
         function creatImg(){
 
-            var imgEle = document.getElementsByTagName("input");
-            var img = document.getElementById("imgView").children;
+           var img_2 = document.createElement("img");
+           var div = document.getElementById("imgView");
+           var rdobtn = document.getElementsByName("rdoBtn");
+            
+            for(var i = 0; i < rdobtn.length; i++){
 
-            console.log(img);
+                if(rdobtn[i].checked){
+                    img_2.setAttribute("src","resources/img/" + rdobtn[i].value);
+                }
 
+            }
 
+            var chd = document.querySelector("#imgView > img");
+            console.log(div);
+
+            div.replaceChild(img_2,chd);
 
         }
 
         function deleteImg(){
+
+            var img = document.getElementById("imgView").children;
+            console.log(img);
+
+            img[0].setAttribute("src","");
 
         }
     </script>
