@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jq_selector_2</title>
+
+    <script type="text/javascript" src="resources/js/jquery-3.5.1.min.js"></script>
+
+    <script type="text/javascript">
+        function c1(){
+		// input의 타입이 text인 태그의 value를 가져오쟈
+            var doc = $("input:text").val();
+            console.log(doc);
+        }
+
+        function c2(){
+            // 라디오버튼이 체크되면 해당 버튼의 value를 가져옴
+            var doc = $("input:radio").val();
+            alert(doc);
+        }
+
+        function c3(){
+
+            // checkbox value가져와서 bold 처리 (앞에 .html이라서.)
+            var doc = $("input:checkbox").val();
+           
+            //$("#a").html("<b>"+doc+"</b>");
+           
+            // .text하면 html태그 동작 하지 않음
+            $("#a").text("<b>"+doc+"</b>");
+            
+        }
+
+        // 제이쿼리로 바꿔보기
+        // 제이쿼리 쓰기위해 $function 문법을 사용 밖에 명령문이 나와있으면 사용 불가
+        $(function(){
+            var selElem = document.getElementsByTagName("select")[0];
+            selElem.onchange=function(){
+                alert(selElem.options[selElem.selectedIndex].value);
+            }
+
+
+
+            //여러개일때는?
+            $("input:checkbox").click(function(){
+
+                var div = document.createElement("div");
+
+                if(this.checked == true){
+                    // console.log(this);
+                    var tis = this.value;
+                    console.log(tis);
+
+                    if($("#a").text() != false){
+                        //console.log(1);
+                        $("#a").append(tis + " ");
+                    } else{
+                        $("#a").text(tis);
+                    }
+
+                } else if ($("input:checkbox").checked == false){
+                    //console.log(3);
+                    $("a").text("");
+                }else{
+
+                }
+                
+            });
+
+
+        });
+    </script>
+
+</head>
+<body>
+
+    <form action="">
+		<input type="text">
+		<input type="button" value="선택" onclick="c1();">
+		<input type="radio" value="20-04-14" onclick="c2();">20-04-14 ~
+		<input type="checkbox" value="(빅데이터 전문 개발자 과정)">
+        빅데이터 전문가
+        <input type="checkbox" value="데이터 전문가">
+        데이터 전문가
+        <input type="checkbox" value="데이터 전문">
+        데이터 전문
+		<div id="a"></div>
+		<select>
+			<option value="1">one</option>
+			<option value="2">two</option>
+			<option value="3">three</option>
+		</select>
+	</form>
+    
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jq22</title>
+
+<script type="text/javascript" src="resources/js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="resources/js/create_table.js"></script>
+
+<script type="text/javascript">
+	
+	// ajax 관련 내용만
+	$(function(){
+		
+		// 조회 버튼을 클릭하면
+		$("#emp_search").click(function(){
+			
+			// ajax 동작
+			$.ajax({
+				
+				// default값들 생략함
+				// emplist.xml 파일을 xml 타입으로 받아올것
+				url : "emplist.xml", // ./ 생략
+				dataType : "xml",
+				
+				// 성공했을때 (단순 변수가 아님, seccess 명령어 이름 변경시 출력되지 x)
+				success:function(msg){
+					// ROW 모두 가져옴
+					// msg : 연결 성공한 xml 데이터 즉 불러온 emplist.xml 의 '데이터' (String 문자열로 넘어오는데 xml이라는 형태로 정해두었기 때문에 태그로 인식가능한것)
+					// ROW태그를 뭉텅이 뭉텅이로 잘라옴
+					var empRowList = $(msg).find("ROW");
+					
+					// body태그 제일 뒤에 추가
+					// create_table.js에 makeTable 함수 empRowList를 넣어 실행한 결과값 즉 완성된 데이터 표를 추가
+					$("body").append(makeTable(empRowList));
+				},
+				error:function(){
+					// 연결 실패시 출력 메시지
+					alert("통신 실패");	
+				}
+				
+			});// ajax
+			
+		});// click
+		
+	});// function
+
+</script>
+
+<style type="text/css">
+	*{margin : 0; padding :0;}
+	table{width: 900px;}
+	table tr:nth-child(1){background-color : skyblue;}
+	fieldset {width : 400px;}
+	body{width: 1000px; margin : 50px auto;}
+</style> 
+
+</head>
+<body>
+
+	<h1>데이터 가져오기</h1>
+	
+	<fieldset>
+		<legend>사원 전체 조회</legend>
+		<input type="button" value="조회" id="emp_search">
+	</fieldset>
+
+</body>
+</html>
