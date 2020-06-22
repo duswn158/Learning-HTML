@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+   <title>0322_fancy</title>
+
+   <!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="dist/jquery.fancybox.min.css">
+
+	<!-- JS -->
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="dist/jquery.fancybox.min.js"></script>
+ </head>
+ <body>
+  	<!-- Your HTML content goes here -->
+	<h1>개별 이미지 팬시박스</h1>
+	<a href="imgs/slide1.jpg" data-fancybox data-caption="Caption for single image">
+		<img src="imgs/slide1.jpg" alt="" />
+	</a>
+
+	<a href="imgs/b021.jpg" data-fancybox data-caption="Caption for single image">
+		<img src="imgs/b021.jpg" alt="" />
+	</a>
+
+	<style type="text/css">
+		a{border: 5px solid #f00;
+			width: 300px;
+			height: 200px;
+			display: inline-block;}
+		a>img{width: 100%;
+			height: 100%;}
+		
+		h1{border: 10px solid lightblue;
+			background: aliceblue;}	
+		.imglist{max-width:none; }
+	</style>
+
+
+	<hr color="lightgreen">
+	<hr color="lightgreen">
+	<h1>이미지 갤러리 팬시박스</h1>
+<h2>fancybox v3.5 - Images</h2>
+
+
+<h3 class="mt-5">Image gallery</h3>
+
+<p class="imglist" style="max-width: 1000px;">
+  <a href="https://source.unsplash.com/juHayWuaaoQ/1500x1000" data-fancybox="images">
+    <img src="https://source.unsplash.com/juHayWuaaoQ/240x160" />
+  </a>
+
+  <a href="https://source.unsplash.com/eWFdaPRFjwE/1500x1000" data-fancybox="images">
+    <img src="https://source.unsplash.com/eWFdaPRFjwE/240x160" />
+  </a>
+  
+  <a href="https://source.unsplash.com/c1JxO-uAZd0/1500x1000" data-fancybox="images">
+    <img src="https://source.unsplash.com/c1JxO-uAZd0/240x160" />
+  </a>
+
+  <a href="https://source.unsplash.com/i2KibvLYjqk/1500x1000" data-fancybox="images">
+    <img src="https://source.unsplash.com/i2KibvLYjqk/240x160" />
+  </a>
+
+  <a href="https://source.unsplash.com/RFgO9B_OR4g/1500x1000" data-fancybox="images">
+    <img src="https://source.unsplash.com/RFgO9B_OR4g/240x160" />
+  </a>
+
+  <a href="https://source.unsplash.com/7bwQXzbF6KE/1500x1000" data-fancybox="images">
+    <img src="https://source.unsplash.com/7bwQXzbF6KE/240x160" />
+  </a>
+
+  <a href="https://source.unsplash.com/NhU0nUR7920/1500x1000" data-fancybox="images">
+    <img src="https://source.unsplash.com/NhU0nUR7920/240x160" />
+  </a>
+  
+  <a href="https://source.unsplash.com/B2LYYV9-y0s/1500x1000" data-fancybox="images">
+    <img src="https://source.unsplash.com/B2LYYV9-y0s/240x160" />
+  </a>
+</p>
+
+<h3 class="mt-5">Gallery with one preview image</h3>
+
+<p>
+  To show only one or a few images but have a large gallery, simply hide the rest of the links. <br />
+  Optionally, use <code>data-thumb</code> for thumbnail image.
+</p>
+
+<p>
+  <a href="https://source.unsplash.com/sGEHs-HY-Oo/1500x1000" 
+     data-fancybox="images-preview" 
+     data-width="1500" data-height="1000"
+     data-thumbs='{"autoStart":true}'>
+    <img src="https://source.unsplash.com/sGEHs-HY-Oo/240x160" />
+  </a>
+</p>
+
+<div style="display: none;">
+  <a href="https://source.unsplash.com/Ai2TRdvI6gM/1500x1000" data-fancybox="images-preview" 
+     data-width="1500" data-height="1000"
+     data-thumb="https://source.unsplash.com/Ai2TRdvI6gM/240x160"></a>
+
+  <a href="https://source.unsplash.com/Hau6K6VP5vs/1500x1000" data-fancybox="images-preview" 
+     data-width="1500" data-height="1000"
+     data-thumb="https://source.unsplash.com/Hau6K6VP5vs/240x160"></a>
+
+  <a href="https://source.unsplash.com/muFaKaGw0eE/1500x1000" data-fancybox="images-preview" 
+     data-width="1500" data-height="1000"
+     data-thumb="https://source.unsplash.com/muFaKaGw0eE/240x160"></a>
+
+  <a href="https://source.unsplash.com/eXHeq48Z-Q4/1500x1000" data-fancybox="images-preview" 
+     data-width="1500" data-height="1000"
+     data-thumb="https://source.unsplash.com/eXHeq48Z-Q4/240x160"></a>
+
+  <a href="https://source.unsplash.com/hBYzBU1xP6s/1500x1000" data-fancybox="images-preview" 
+     data-width="1500" data-height="1000"
+     data-thumb="https://source.unsplash.com/hBYzBU1xP6s/240x160"></a>
+</div>
+
+<h3 class="mt-5">Data attributes</h3>
+
+<ul>
+  <li>
+    Use <code>data-width</code> and <code>data-height</code> attributes to predefine image dimensions. 
+
+    It is recommended to use these attributes for SVG files.
+  </li>
+  <li>
+    A caption can be added using the <code>data-caption</code> attribute.
+  </li>
+  <li>
+    It is possible to use <code>data-*</code> attributes to set any option. For example, <code>data-small-btn="true"</code> would display small close button on top of the image and hide the toolbar.
+  </li>
+</ul>
+
+<a href="https://image.flaticon.com/icons/svg/51/51767.svg" 
+   data-fancybox 
+   data-width="500" data-height="500"
+   data-caption="Caption for SVG file"
+   data-small-btn="true">
+  <img width="160" height="160" src="https://image.flaticon.com/icons/svg/51/51767.svg" />
+</a>
+
+<h3 class="mt-5">Using trigger element</h3>
+
+<p>
+  Sometimes you might need to start fancyBox from different element - simply use <code>data-fancybox-trigger</code> attribute with the value of fancyBox group name.
+  This allows to avoid content duplication in the gallery. For example, show fancybox when clicking on featured image:
+</p>
+
+<p class="imglist" style="max-width: 520px;">
+  <a data-fancybox-trigger="preview" href="javascript:;">
+    <img src="https://source.unsplash.com/LuK-MuZ-yf0/510x340" />
+  </a>
+
+  <a href="https://source.unsplash.com/LuK-MuZ-yf0/1500x1000" data-fancybox="preview" data-width="1500" data-height="1000">
+    <img src="https://source.unsplash.com/LuK-MuZ-yf0/120x80" />
+  </a>
+
+  <a href="https://source.unsplash.com/Oaqk7qqNh_c/1500x1000" data-fancybox="preview" data-width="1500" data-height="1000">
+    <img src="https://source.unsplash.com/Oaqk7qqNh_c/120x80" />
+  </a>
+  
+  <a href="https://source.unsplash.com/X9GHkHbJIaU/1500x1000" data-fancybox="preview" data-width="1500" data-height="1000">
+    <img src="https://source.unsplash.com/X9GHkHbJIaU/120x80" />
+  </a>
+  
+  <a href="https://source.unsplash.com/9c_djeQTDyY/1500x1000" data-fancybox="preview" data-width="1500" data-height="1000">
+    <img src="https://source.unsplash.com/9c_djeQTDyY/120x80" />
+  </a>
+</a>
+	<!-- 앤드 <h1>이미지 갤러리 팬시박스</h1> -->
+
+
+	<hr color="lightgreen">
+	<hr color="lightgreen">
+	<h1>비디오 팬시박스</h1>
+
+	<!-- end <h1>비디오 팬시박스</h1> -->
+
+
+	<hr color="lightgreen">
+	<hr color="lightgreen">
+	<h1>인라인 팬시박스</h1>
+
+	<!-- end <h1>인라인 팬시박스</h1> -->
+ </body>
+</html>

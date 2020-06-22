@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>0328_masonry1</title>
+ </head>
+ <body>
+
+ <div class="grid">
+ 
+	<div class="gitem"><a href="#"><img src="images/img01.jpg" alt=""></a></div>
+	<div class="gitem"><a href="#"><img src="images/img02.jpg" alt=""></a></div>
+	<div class="gitem"><a href="#"><img src="images/img03.jpg" alt=""></a></div>
+	<div class="gitem"><a href="#"><img src="images/img04.jpg" alt=""></a></div>
+	<div class="gitem"><a href="#"><img src="images/img05.jpg" alt=""></a></div>
+	<div class="gitem"><a href="#"><img src="images/img06.jpg" alt=""></a></div>
+	<div class="gitem"><a href="#"><img src="images/img07.jpg" alt=""></a></div>
+	<div class="gitem gitem2"><a href="#"><img src="images/img08.jpg" alt=""></a></div>
+	<div class="gitem"><a href="#"><img src="images/img09.jpg" alt=""></a></div>
+	<div class="gitem"><a href="#"><img src="images/img10.jpg" alt=""></a></div>
+	<div class="gitem"><a href="#"><img src="images/img11.jpg" alt=""></a></div>
+	<div class="gitem"><a href="#"><img src="images/img12.jpg" alt=""></a></div>
+	<div class="gitem"><a href="#"><img src="images/img13.jpg" alt=""></a></div>
+	<div class="gitem"><a href="#"><img src="images/img14.jpg" alt=""></a></div>
+	<div class="gitem"><a href="#"><img src="images/img15.jpg" alt=""></a></div>
+	<div class="gitem"><a href="#"><img src="images/img16.jpg" alt=""></a></div>
+	<div class="gitem"><a href="#"><img src="images/img17.jpg" alt=""></a></div>
+	<div class="gitem gitem2"><a href="#"><img src="images/img18.jpg" alt=""></a></div>
+	<div class="gitem"><a href="#"><img src="images/img19.jpg" alt=""></a></div>
+	<div class="gitem"><a href="#"><img src="images/img20.jpg" alt=""></a></div>
+
+ </div><!-- grid -->
+  
+	<style type="text/css">
+		*{margin: 0;padding: 0;}
+
+		.grid{background: #ccc;
+				padding: 6px;
+				width: 100%;}
+		.grid  .gitem{width: 200px; margin-bottom: 6px;}
+		.grid  .gitem2{width: 400px;}
+		.grid  .gitem a{}
+		.grid  .gitem a img{border: 0; vertical-align: top; 
+									/* border: 1px solid #000; */
+									width: 100%;}
+		.grid  p{padding: 6px; background: #fff;}
+	</style>	
+	
+	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+	<script src="masonry.pkgd.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	//그림의 여백을 p태그가 a태그를 감싸도록 하여 처리
+	$(".grid  .gitem  a").wrap("<p></p>");//양쪽을 감싸주는 .wrap()
+
+	$(window).load(function(){
+		$(".grid").masonry({
+			columnWidth: 203
+		});//masonry
+	});//load
+	</script>
+
+ </body>
+</html>

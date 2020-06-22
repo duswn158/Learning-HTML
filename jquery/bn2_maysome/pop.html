@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>pop.html</title>
+ </head>
+ <body>
+  
+	<div class="img">
+		<p class="p">
+			<span>오늘 하루 열지 않음</span>
+			<input type="checkbox" value="" id="">
+			<a href="#" onclick="window.close();">닫기 X</a>
+		</p>
+	</div><!-- img -->
+
+	<style type="text/css">
+	
+	*{margin: 0; padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;}/*bxi:n*/
+	img{border: none;
+	vertical-align: top;}
+	a{text-decoration: none;
+		color : #222;}
+	ul,li,ol{list-style: none;}
+
+	html,body{width: 100%;
+			  height: 100%;}
+	body{position: relative;}
+	
+	/*--------------------------------------*/
+
+	.img{width: 500px;
+		height: 815px;
+		background: url(imgs/180621_s_ys_1.jpg) no-repeat;
+		position: relative;}
+	.p{position: absolute;
+		width: 100%;
+		height: 30px;
+		bottom:0px;
+		right:0px;
+		text-align: right;
+		line-height: 30px;
+		background: #585858;
+		padding-right: 10px;
+		color : #fff;
+		font-size: 90%;}
+	.p> input{margin-right: 20px;}
+	.p>a{color : #fff;}
+	</style>	
+ </body>
+</html>

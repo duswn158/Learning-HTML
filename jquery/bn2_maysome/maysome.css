@@ -1,0 +1,89 @@
+/*maysome.css*/
+
+
+/*----reset-------------------------*/
+*{margin: 0; padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;}/*bxi:n*/
+img{border: none;
+	vertical-align: top;}
+a{text-decoration: none;
+	color : #222;}
+ul,li,ol{list-style: none;}
+
+html,body{width: 100%;
+		  height: 100%;}
+body{position: relative;}
+/*------------header-----------------*/
+.header{font-size: 80%;
+		position: fixed;
+		color : #fff;
+		position: relative;
+		z-index: 999;}
+
+.header > ul{/*border: 1px solid blue;*/
+			width: 410px;
+			display: inline-block;
+			position: absolute;
+			top : 50px;
+			left : 50%;
+			margin-left: -200px;
+			z-index: 999;}
+.header > ul:after{content : '';
+					display: block;
+					clear: both;}
+.header > ul > li{float: left;
+					/*border: 2px solid green;*/
+					width: 100px;}
+.header > ul > li > a{color : #fff;}
+
+.header > ol{/*border: 1px solid red;*/
+			 width: 310px;
+			 display: inline-block;
+			 position: absolute;
+			top : 50px;
+			right : 1%;
+			margin-left: -150px;}
+.header > ol:after{content : '';
+					display: block;
+					clear: both;}
+.header > ol > li{float: left;
+					/*border: 2px solid green;*/
+					width: 100px;}
+.header > ol > li > a{}
+
+/*-----------------------------*/
+.slider{position: relative;
+		overflow: hidden;
+		/*border: 1px solid red;*/}
+.slider > .container{position: absolute;}
+.slider > .container:after{content : '';
+							display: block;
+							clear: both;}
+.slider > .container > .item{width: 100%;
+							height: 100%;
+							float: left;}
+
+.slider > .container > .item > img{width: 100%;
+									height: 100%;}
+.slider > ul{width: 95px;
+			 /*border: 1px solid red;*/
+			 z-index: 999;
+			 position: absolute;
+			 bottom : 50px;
+			 left : 50%;
+			 margin-left: -42px;}
+.slider > ul > li{width: 15px;
+				  height: 15px;
+				  float: left;
+				  background: #000;
+				  margin-right: 10px;
+				  border-radius : 50%;
+				  cursor : pointer;}
+
+.slider > ul > li:last-child{margin-right: 0px;}
+		
+
+/*--------------------------------------------*/
+.slider > ul > li.selected{background: #fff;}

@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>0321_single</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script> 
+<script src="masonry.pkgd.min.js" type="text/javascript"></script>
+
+<script type="text/javascript" src="0321_single.js"></script> 
+<link rel="stylesheet" href="0321_single.css">
+
+ </head>
+ <body>
+
+  <script>
+    $(document).ready(function(){
+      $('.slider').bxSlider();
+    });
+  </script>
+   <!-- <script>
+    $(document).ready(function(){
+      $('.slider').bxSlider();
+    });
+     </script> -->
+  <script>
+ 
+	$(document).ready(function(){
+      
+	  $(".bx-default-pager  a").click(function(){
+	  
+		$("a").removeClass("selected");
+		$(this).addClass("selected");
+
+	  })
+
+		$(".grid  .gitem  a").wrap("<p></p>");//양쪽을 감싸주는 .wrap()
+});//function	
+
+	$(window).load(function(){
+		$(".grid").masonry({
+			columnWidth: 310
+		});//masonry
+	});//load
+  
+
+ </script>
+
+  <header class="header">
+	<div class="center">
+		<ul class="gnb">
+			<li class="logo"><a href="#">logo</a></li>
+			<li class="selected"><a href="#">01</a></li>
+			<li><a href="#">02</a></li>
+			<li><a href="#">03</a></li>
+		</ul>
+	</div><!-- center -->
+  </header>
+  
+  <section class="section">
+  	<div class="center">
+
+		
+		  <div class="slider">
+			<div class="first"><img class="img2" src="imgs/btn_mov1.png" alt=""><img  src="imgs/btn_mov2.png" alt=""></div>
+			<div class="content"><img src="imgs/b021.jpg" alt=""></div>
+			<div class="content"><img src="imgs/b34.jpg" alt=""></div>
+		  </div>
+		
+
+		<div class="srv">
+			
+			<div class="srv_t"></div><!-- srv_t -->
+			<div class="srv_b">
+				<a href="#" class="arrow">button</a>
+				<div class="slider">
+				<div class="content"><img class="img2" src="imgs/main_01.jpg" alt=""></div>
+				<div class="content"><img src="imgs/main_02.jpg" alt=""></div>
+				<div class="content"><img src="imgs/main_03.jpg" alt=""></div>
+				<div class="content"><img src="imgs/main_04.jpg" alt=""></div>
+				<div class="content"><img src="imgs/main_05.jpg" alt=""></div>
+			  </div>
+			</div><!-- srv_b -->
+
+		</div><!-- srv -->
+
+		<div class="theme">
+			<div class="theme_t"></div><!-- theme_t -->
+			<div class="theme_b">
+				<a href="#" class="arrow">button</a>
+			<div class="grid">
+				<div class="gitem"><a href="#"><img src="imgs/img01.png" alt=""></a></div>
+				<div class="gitem"><a href="#"><img src="imgs/img02.png" alt=""></a></div>
+				<div class="gitem"><a href="#"><img src="imgs/img03.png" alt=""></a></div>
+				<div class="gitem"><a href="#"><img src="imgs/img04.png" alt=""></a></div>
+				<div class="gitem"><a href="#"><img src="imgs/img05.png" alt=""></a></div>
+				<div class="gitem"><a href="#"><img src="imgs/img06.png" alt=""></a></div>
+				<div class="gitem"><a href="#"><img src="imgs/img07.png" alt=""></a></div>
+				<div class="gitem"><a href="#"><img src="imgs/img08.png" alt=""></a></div>
+				<div class="gitem"><a href="#"><img src="imgs/img09.png" alt=""></a></div>
+				<div class="gitem"><a href="#"><img src="imgs/img10.png" alt=""></a></div>
+			</div><!-- grid -->
+			
+			</div><!-- theme_b -->
+		</div><!-- theme -->
+	
+	</div><!-- center -->
+  </section>
+
+  <footer class="footer">
+  	<div class="center">footer</div><!-- center -->
+  </footer>
+
+
+<style type="text/css">
+	
+	
+	.content > img{width: 100%;
+						height: 700px;}
+
+.srv_b  .bx-wrapper .bx-controls-direction .bx-prev{display: none;}
+.srv_b  	.bx-wrapper .bx-controls-direction .bx-next{display: none;}
+/*.bx-wrapper .bx-controls-direction .bx-next:hover{background-position : 0px;}
+ .bx-wrapper .bx-next:hover, .bx-wrapper .bx-next:focus{background-position : 0px 0px;} */
+
+
+	.bx-wrapper .bx-pager.bx-default-pager a{background: url(imgs/visualNav.png);
+															  -webkit-background-size: 18px;
+															  background-size: 18px;}
+	.bx-wrapper .bx-pager.bx-default-pager a{width: 18px;
+															  height: 18px;}
+
+
+</style>
+<style type="text/css">
+
+	.bx-wrapper .bx-pager.bx-default-pager a.selected{background: url(imgs/visualNav.png);
+																			background-position : 0px 18px;}
+			
+.bx-wrapper .bx-pager.bx-default-pager a:hover, .bx-wrapper .bx-pager.bx-default-pager a.active, .bx-wrapper .bx-pager.bx-default-pager a:focus{background: url(imgs/visualNav.png);
+																			background-position : 0px 18px;}
+
+
+.section > .center > .srv > .srv_b{height: 740px;
+											background: none;}
+</style>
+
+
+
+
+ </body>
+</html>

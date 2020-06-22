@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>0328_ma</title>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+ </head>
+ <body>
+  
+	<div class="grid">
+	  <div class="grid-sizer"></div>
+	  <div class="grid-item">...</div>
+	  <div class="grid-item grid-item--width2">...</div>
+	  <div class="grid-item">...</div>
+	  <div class="grid-item">...</div>
+	  <div class="grid-item">...</div>
+	  <div class="grid-item">...</div>
+	  <div class="grid-item grid-item--width2">...</div>
+	</div><!-- grid -->
+
+	<style type="text/css">
+		*{margin: 0px; padding: 0px;}
+
+		div.grid{border: 1px solid red;
+					/* width: 610px; */}
+		div.grid-item{border: 1px solid blue;}
+		div.grid-item--width2{border: 1px dashed green;}
+
+
+		.grid-item { width: 200px; }
+		.grid-item--width2 { width: 400px; }
+	
+	</style><!--text/css-->
+
+	<script type="text/javascript">
+	
+		$('.grid').masonry({
+								  // options
+								  itemSelector: '.grid-item',
+								  columnWidth: 200
+
+								  /*columnWidth: '.grid-sizer',
+									itemSelector: '.grid-item',
+									percentPosition: true*/
+								});
+	
+	</script><!--javascript-->	
+
+
+ </body>
+</html>
