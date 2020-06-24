@@ -1,0 +1,58 @@
+<cont_coffee>
+-- HTML --------------------------------
+1. div.coffee
+2. div.coffee>div.coffeemenu+ul.coffeesmall 
+3. div.coffee>div.coffeemenu>table
+ 	tr>td.coffeeimg>img.largeimg
+	tr>td.text_kor>팝 피칸 라떼
+	tr>td.text_eng>POP Pecan Latte
+	tr>td.text_detail>에스프레소와 어우러진 고소한 버터 피칸에 생크림과 달달한 카라멜 팝콘을 토핑한 라떼 음료
+4. div.coffee>ul.coffeesmall
+	li*9>img+h3+h4+p
+-- CSS ---------------------------------
+1. 문서전체
+ 글꼴 : 나눔고딕, 12픽셀
+2. div.coffeemenu : 500픽셀
+3. ul.coffeesmall : 495픽셀
+   li : 165x190, border-left, border-top
+   li>img : 130x111
+=========================
+팝 피칸 라떼
+POP Pecan Latte
+에스프레소와 어우러진 고소한 버터 피칸에 생크림과 달달한 카라멜 팝콘을 토핑한 라떼 음료
+
+팝 피칸 라떼
+POP Pecan Latte
+진한 에스프레소의 카라멜 라떼 마끼아또에 생크림과 특색있는 달고나를 가니쉬한 라떼 음료
+
+달달 카라멜 라떼
+DAL DAL Caramel Latte
+파스쿠찌의 Single Origin Coffee를 정성껏 추출한 이탈리안 정통 오리지널 드립식 커피
+
+오리지널 드립커피
+Original Drip Coffee
+뜨거운물에 에스프레소를 희석, 한층 부드럽고 깊은 아로마를 느낄 수 있는 레귤러 커피
+
+아메리카노
+Americano
+에스프레소와 스팀우유를 혼합하여 우유의 고소함과 부드러운 마우스필을 함께 느낄 수 있는 마일드 커피
+
+카페라떼
+Caffe' Latte
+에스프레소와 스팀우유를 혼합하여 우유의 고소함과 부드러운 마우스필을 함께 느낄 수 있는 마일드 커피
+
+카라멜 라떼 마끼아또
+Latte Macchiato (Caramel)
+달콤한 카라멜과 부드러운 스팀 밀크를 혼합 한 후, 에스프레소를 가미한 정통 이탈리안 라떼
+
+바닐라 라떼 마끼아또
+Latte Macchiato (Vanilla)
+고소한 바닐라와 부드러운 스팀 밀크를 혼합 한 후, 에스프레소를 가미한 정통 이탈리안 라떼
+
+화이트초콜릿 마끼아또
+Latte Macchiato (White Choclate)
+달콤 쌉싸름 화이트 초콜릿과 부드러운 스팀 밀크를 혼합후, 에스프레소를 가미한 정통 이탈리안 라떼
+
+카페모카
+Caffe' Mocha
+달콤한 다크 초콜릿과 에스프레소에 부드러운 스팀 밀크를 혼합 한 후, 생크림을 얹은 베리에이션 커피
